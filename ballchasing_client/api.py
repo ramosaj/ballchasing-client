@@ -65,6 +65,11 @@ class DetailedReplays(BallchasingApi):
     def __init__(self,replay_id):
         super().__init__()
         self.endpoint = f"replays/{replay_id}"
+    
+
+class ProReplays(BallchasingApi):
+    def __init__(self, group_id):
+        super().__init__()
 
     
 

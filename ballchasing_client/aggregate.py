@@ -12,7 +12,6 @@ class ReplayAggregator:
             self.records = json.load(open(filename))
         else:
             self.records = []
-        
     
 
     def extract_players(self,record):
