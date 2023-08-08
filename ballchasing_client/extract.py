@@ -17,14 +17,19 @@ class Extractor:
 
         if start and after_delta :
             self.start = start 
-            self.end = start + after_delta 
+            self.end = start + after_delta
         
         elif end and before_delta:
             self.end = end 
             self.start = end - before_delta
+        elif start and end:
+            self.start = start 
+            self.end = end
+        else:
+            raise Exception("Acceptable combinations of start/end: (start,end), (end,before_delta), (start,after_delta)")
         
         self.player_id = player_id
-        self.date_range = pd.date_range(start=start,end=end,freq=freq).values
+        self.date_range = pd.date_range(start=self.start,end=self.end,freq=freq,unit='s').values
         self.detailed = detailed
     
 
@@ -54,7 +59,7 @@ class Extractor:
 
             return detailed_replays
         elif replay_id:
-            detailed_replay = self.fetch_detailed_one(replay['id'])
+            detailed_replay = self.fetch_detailed_one(replay_id)
             return detailed_replay
             
     def fetch_detailed_one(self,replay_id):
