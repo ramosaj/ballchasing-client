@@ -16,3 +16,6 @@ dependencies = [
     'pandas',
     "python-dateutil",
 ]
+
+[project.scripts]
+extract-monthly = "ballchasing_client.scripts.extract_daily:main()"

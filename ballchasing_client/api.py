@@ -6,7 +6,7 @@ import json
 
 class BallchasingApi:
     def __init__(self):
-        self.token = "bKE1sr2t7XVr7pi3Ms6l8OjmnBdqf0cTwFomq1dD"
+        self.token = os.environ.get("BALLCHASING_TOKEN")
         self.jsonpath = None
         self.params = None
         self.endpoint = None
