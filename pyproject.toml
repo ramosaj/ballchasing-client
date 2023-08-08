@@ -18,4 +18,4 @@ dependencies = [
 ]
 
 [project.scripts]
-extract-monthly = "ballchasing_client.scripts.extract_daily:main()"
+extract-daily = "ballchasing_client.scripts.extract_daily:main"
